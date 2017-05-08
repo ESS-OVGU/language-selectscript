@@ -1,0 +1,236 @@
+'scopeName': 'source.selectscript'
+'name': 'SelectScript'
+'fileTypes': ['S2', 's2']
+
+'patterns': [
+    {
+        'begin': '#'
+        'end':   '$'
+        'name':  'comment.line.bumber-sign.selectscript'
+    }
+    {
+        'begin': '/\\*'
+        'end':   '\\*/'
+        'name':  'comment.block.selectscript'
+    }
+
+    {
+        'match': '\\b((\\.[0-9]+)|([0-9]+\\.?[0-9]*))\\b'
+        'name':  'constant.numeric.selectscript'
+    }
+    {   # binary
+        'match': '\\b(0b)([0-1]+)\\b'
+        'name': 'constant.numeric.selectscript'
+    }
+
+    {   # octal
+        'match': '\\b(0o)([0-8]+)\\b'
+        'name': 'constant.numeric.selectscript'
+    }
+
+    {   # hexal
+        'match': '\\b(0x)([0-9AaBbCcDdEeFf]+)\\b'
+        'name': 'constant.numeric.selectscript'
+    }
+
+#    {
+#        'match': '\\b([Pp][Rr][Oo][Cc]([Ee][Dd][Uu][Rr][Ee])?)\\s+(\\w+)\\s*\\(.*\\)'
+#        'captures':
+#            '1':
+#                'name': 'keyword.control.selectscript'
+#            '2':
+#                'name': 'entity.name.function.selectscript'
+#        'name': 'meta.function.selectscript'
+#    }
+    {
+        'begin': '\''
+        'end': '\''
+        'name': 'string.quoted.single.selectstring'
+    }
+    {
+        'begin': '"'
+        'end': '"'
+        'name': 'string.quoted.double.selectstring'
+    }
+
+    {   # AS
+        'match': '\\b[Aa][Ss]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # CONNECT BY
+        'match': '\\b[Cc][Oo][Nn][Nn][Ee][Cc][Tt](\\s+)[Bb][Yy]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # FROM
+        'match': '\\b[Ff][Rr][Oo][Mm]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # GROUP BY
+        'match': '\\b[Gg][Rr][Oo][Uu][Pp](\\s+)[Bb][Yy]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # ORDER BY
+        'match': '\\b[Oo][Rr][Dd][Ee][Rr](\\s+)[Bb][Yy]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # SELECT
+        'match': '\\b[Ss][Ee][Ll][Ee][Cc][Tt]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # START WITH
+        'match': '\\b[Ss][Tt][Aa][Rr][Tt](\\s+)[Ww][Ii][Tt][Hh]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # STOP WITH
+        'match': '\\b[Ss][Tt][Oo][Pp](\\s+)[Ww][Ii][Tt][Hh]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # WHERE
+        'match': '\\b[Ww][Hh][Ee][Rr][Ee]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+
+    {   # PROCEDURE
+        'match': '\\b[Pp][Rr][Oo][Cc]([Ee][Dd][Uu][Rr][Ee])?\\b'
+        'name':  'storage.function.selectscript'
+    }
+
+    {   # REF
+        'match': '\\b[Rr][Ee][Ff]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+
+    {   # RECUR
+        'match': '\\b[Rr][Ee][Cc][Uu][Rr]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+
+    {   # no cycle
+        'match': '\\b[Nn][Oo](\\s+)[Cc][Yy][Cc][Ll][Ee]\\b'
+        'name':  'support.type.selectscript'
+    }
+    {   # unique
+        'match': '\\b[Uu][Nn][Ii][Qq][Uu][Ee]\\b'
+        'name':  'support.type.selectscript'
+    }
+
+    {   # list
+        'match': '\\b[Ll][Ii][Ss][Tt]\\b'
+        'name':  'support.type.selectscript'
+    }
+    {   # dict|ionary
+        'match': '\\b[Dd][Ii][Cc][Tt]([Ii][Oo][Nn][Aa][Rr][Yy])?\\b'
+        'name':  'support.type.selectscript'
+    }
+    {   # set
+        'match': '\\b[Ss][Ee][Tt]\\b'
+        'name':  'support.type.selectscript'
+    }
+    {   # void
+        'match': '\\b[Vv][Oo][Ii][Dd]\\b'
+        'name':  'support.type.selectscript'
+    }
+    {   # val|ue
+        'match': '\\b[Vv][Aa][Ll]([Uu][Ee])?\\b'
+        'name':  'support.type.selectscript'
+    }
+
+    {   # ASC|ENDING
+        'match': '\\b[Aa][Ss][Cc]([Ee][Nn][Dd][Ii][Nn][Gg])?\\b'
+        'name':  'support.type.selectscript'
+    }
+    {   # DESC|ENDING
+        'match': '\\b[Dd][Ee][Ss][Cc]([Ee][Nn][Dd][Ii][Nn][Gg])?\\b'
+        'name':  'support.type.selectscript'
+    }
+
+    {
+        'match': '\\bhelp\\b'
+        'name':  'support.function.selectscript'
+    }
+    {
+        'match': '\\bprint\\b'
+        'name':  'support.function.selectscript'
+    }
+    {
+        'match': '\\bmem\\b'
+        'name':  'support.function.selectscript'
+    }
+    {
+        'match': '\\bdel\\b'
+        'name':  'support.function.selectscript'
+    }
+    {
+        'match': '\\bimport\\b'
+        'name':  'support.function.selectscript'
+    }
+
+    {   # true
+        'match': '\\b[Tt][Rr][Uu][Ee]\\b'
+        'name':  'constant.language.selectscript'
+    }
+    {   # false
+        'match': '\\b[Ff][Aa][Ll][Ss][Ee]\\b'
+        'name':  'constant.language.selectscript'
+    }
+    {   # none
+        'match': '\\b[Nn][Oo][Nn][Ee]\\b'
+        'name':  'constant.language.selectscript'
+    }
+
+    {
+        'match': '\\$'
+        'name':  'variable.language.selectscript'
+    }
+
+    {
+        'match': '\\@'
+        'name':  'support.function.selectscript'
+    }
+
+    {
+        'match': '\\b[Aa][Nn][Dd]\\b'
+        'name':  'keyword.operator.selectscript'
+    }
+    {
+        'match': '\\b[Oo][Rr]\\b'
+        'name':  'keyword.operator.selectscript'
+    }
+    {
+        'match': '\\b[Xx][Oo][Rr]\\b'
+        'name':  'keyword.operator.selectscript'
+    }
+    {
+        'match': '\\b[Ii][Nn]\\b'
+        'name':  'keyword.operator.selectscript'
+    }
+    {
+        'match': '\\b[Nn][Oo][Tt]\\b'
+        'name':  'keyword.operator.selectscript'
+    }
+
+
+
+    {
+        'match': '\\b[Ii][Ff]\\b'
+        'name':  'keyword.contol.selectscript'
+    }
+
+
+
+    {
+        'match': '\\b[Ll][Oo][Oo][Pp]\\b'
+        'name':  'keyword.contol.selectscript'
+    }
+
+    {
+        'match': '\\b[Ee][Xx][Ii][Tt]\\b'
+        'name':  'keyword.contol.selectscript'
+    }
+
+    {
+        'match': '\\b[Yy][Ii][Ee][Ll][Dd]\\b'
+        'name':  'keyword.contol.selectscript'
+    }
+
+]

@@ -1,0 +1,17 @@
+{
+  "name": "language-selectscript",
+  "version": "0.0.0",
+  "description": "SelectScript language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ESS-OVGU/language-selectscript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ESS-OVGU/language-selectscript/issues"
+  },
+  "license": "MIT"
+}
