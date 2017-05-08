@@ -53,9 +53,13 @@
         'name': 'string.quoted.double.selectstring'
     }
 
-    {   # AS
-        'match': '\\b[Aa][Ss]\\b'
-        'name':  'keyword.control.selectscript'
+    {   # AS ...
+        'match': '\\b([Aa][Ss])\\s+(([Dd][Ii][Cc][Tt]([Ii][Oo][Nn][Aa][Rr][Yy])?)|([Ll][Ii][Ss][Tt])|([Ss][Ee][Tt])|([Vv][Aa][Ll]([Uu][Ee])?)|([Vv][Oo][Ii][Dd]))\\b'
+        'captures':
+            '1':
+                'name': 'keyword.control.selectscript'
+            '2':
+                'name': 'support.type.selectscript'
     }
     {   # CONNECT BY
         'match': '\\b[Cc][Oo][Nn][Nn][Ee][Cc][Tt](\\s+)[Bb][Yy]\\b'
@@ -67,6 +71,10 @@
     }
     {   # GROUP BY
         'match': '\\b[Gg][Rr][Oo][Uu][Pp](\\s+)[Bb][Yy]\\b'
+        'name':  'keyword.control.selectscript'
+    }
+    {   # LIMIT
+        'match': '\\b[Ll][Ii][Mm][Ii][Tt]\\b'
         'name':  'keyword.control.selectscript'
     }
     {   # ORDER BY
@@ -114,27 +122,6 @@
         'name':  'support.type.selectscript'
     }
 
-    {   # list
-        'match': '\\b[Ll][Ii][Ss][Tt]\\b'
-        'name':  'support.type.selectscript'
-    }
-    {   # dict|ionary
-        'match': '\\b[Dd][Ii][Cc][Tt]([Ii][Oo][Nn][Aa][Rr][Yy])?\\b'
-        'name':  'support.type.selectscript'
-    }
-    {   # set
-        'match': '\\b[Ss][Ee][Tt]\\b'
-        'name':  'support.type.selectscript'
-    }
-    {   # void
-        'match': '\\b[Vv][Oo][Ii][Dd]\\b'
-        'name':  'support.type.selectscript'
-    }
-    {   # val|ue
-        'match': '\\b[Vv][Aa][Ll]([Uu][Ee])?\\b'
-        'name':  'support.type.selectscript'
-    }
-
     {   # ASC|ENDING
         'match': '\\b[Aa][Ss][Cc]([Ee][Nn][Dd][Ii][Nn][Gg])?\\b'
         'name':  'support.type.selectscript'
@@ -158,6 +145,14 @@
     }
     {
         'match': '\\bdel\\b'
+        'name':  'support.function.selectscript'
+    }
+    {
+        'match': '\\btime\\b'
+        'name':  'support.function.selectscript'
+    }
+    {   # list functions
+        'match': '\\b(len)|(insert)|(remove)|(pop)\\b'
         'name':  'support.function.selectscript'
     }
     {
