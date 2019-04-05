@@ -1,6 +1,6 @@
 {
   "name": "language-selectscript",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "SelectScript language support in Atom",
   "engines": {
     "atom": "*"
